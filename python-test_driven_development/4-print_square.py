@@ -1,49 +1,25 @@
-# Test Cases for the print_square function
+#!/usr/bin/python3
 
->>> print_square = __import__('4-print_square').print_square
-
-# Test Case 1: Square of size 4
->>> print_square(4)
-####
-####
-####
-####
-
-# Test Case 2: Non-integer size
->>> print_square("square")
-Traceback (most recent call last):
-...
-TypeError: size must be an integer
-
-# Test Case 3: Negative size (raises ValueError)
->>> print_square(-1)
-Traceback (most recent call last):
-...
-ValueError: size must be >= 0
-
-# Test Case 4: Square of size 0
->>> print_square(0)
+"""print_square function"""
 
 
-# Test Case 5: Square of size 10
->>> print_square(10)
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
+def print_square(size):
+    """Prints the square using the size of the square
 
-# Test Case 6: Square of size 1
->>> print_square(1)
-#
+    Parameters:
+        size (int): size of the square
 
-# Test Case 7: Missing size argument
->>> print_square()
-Traceback (most recent call last):
-...
-TypeError: print_square() missing 1 required positional argument: 'size'
+    Raises:
+        TypeError: If size is not an integer
+        ValueError: If size is less than 0
+        TypeError: If size if float and is less than 0
+    """
+    if not isinstance(size, int):
+        raise TypeError("size must be an integer")
+    if size < 0:
+        raise ValueError("size must be >= 0")
+    if isinstance(size, float) and size < 0:
+        raise TypeError("size must be an integer")
+
+    for _ in range(size):
+        print("#" * size)
