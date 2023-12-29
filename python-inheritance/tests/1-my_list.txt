@@ -1,0 +1,77 @@
+# Test Cases for the MyList class
+
+>>> MyList = __import__('1-my_list').MyList
+
+
+# Test Case 1: Empty list
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+
+# Test Case 2: Append elements to MyList
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list
+[1, 4, 2, 3, 5]
+
+
+# Test Case 3: Print MyList in sorted order
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+
+# Test Case 4: MyList remains unchanged after print_sorted
+>>> my_list
+[1, 4, 2, 3, 5]
+
+
+# Test Case 5: Append more elements to MyList
+>>> my_list.append(0)
+>>> my_list.append(7)
+>>> my_list
+[1, 4, 2, 3, 5, 0, 7]
+
+
+# Test Case 6: Print MyList sorted after adding more elements
+>>> my_list.print_sorted()
+[0, 1, 2, 3, 4, 5, 7]
+
+
+# Test Case 7: Verify that MyList remains unchanged after print_sorted
+>>> my_list
+[1, 4, 2, 3, 5, 0, 7]
+
+# Test Case 8: MyList is an instance of the class list
+>>> my_list = MyList()
+>>> isinstance(my_list, list)
+True
+
+# Test Case 9: Instance has the correct type
+>>> my_list = MyList()
+>>> type(my_list) == MyList
+True
+
+
+# Test Case 10: print_sorted method with 1 passed argument
+>>> my_list.print_sorted(22)
+Traceback (most recent call last):
+...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+
+# Test Case 11: Single number
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[3]
+
+
+# Test Case 12: Negative and positive numbers
+>>> my_list.append(-3)
+>>> my_list.append(0)
+>>> my_list.append(6)
+>>> my_list.print_sorted()
+[-3, 0, 3, 6]
