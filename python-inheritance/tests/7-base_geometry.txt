@@ -1,0 +1,95 @@
+# Test Cases for BaseGeometry class
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+# Test Case 1: Create an instance of BaseGeometry
+>>> bg = BaseGeometry()
+
+
+# Test Case 2: Call the area method (raises an Exception)
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+
+# Test Case 3: integer_validator receives a good value argument
+>>> bg.integer_validator("age", 23)
+
+
+
+# Test Case 4: Value is not an integer (raises a TypeError)
+>>> bg.integer_validator("age", "23")
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+
+# Test Case 5: Value is equal to 0 (raises a ValueError)
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+
+# Test Case 6: Value is less than 0 (raises a ValueError)
+>>> bg.integer_validator("age", -34)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+
+# Test Case 7: integer_validator method receives only one argument
+>>> bg.integer_validator("name")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+# Test Case 8: integer_validator method don't receives arguments
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
+# Test Case 9: Pass one argument to area method
+>>> bg.area(6)
+Traceback (most recent call last):
+...
+TypeError: area() takes 1 positional argument but 2 were given
+
+
+# Test Case 10: integer_validator method receives a list as argument
+>>> bg.integer_validator("age", [23])
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+
+# Test Case 11: integer_validator method receives a tuple as argument
+>>> bg.integer_validator("age", (23,))
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+
+# Test Case 12: integer_validator method receives a dict as argument
+>>> bg.integer_validator("age", {23})
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+
+# Test Case 13: integer_validator method receives a None as argument
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+
+# Test Case 14: integer_validator method receives a boolean as argument
+>>> bg.integer_validator("name", True)
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
